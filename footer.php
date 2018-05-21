@@ -14,7 +14,7 @@
                         <a href="#"><i class="icon-dribbble2"></i></a>
                         <a href="#"><i class="icon-youtube"></i></a>
                     </p>
-                    <p>Copyright 2016 <a href="#">Yadab</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> </p>
+                    <p>Copyright 2018 <a href="http://www.yadabn.com.np">Yadab</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> </p>
                 </div>
             </div>
         </div>
@@ -31,8 +31,9 @@
 
 <!-- Google Map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+
+<script src="<?php echo get_template_directory_uri() . '/js/modernizr-2.6.2.min.js' ?>"></script>
 <!-- jQuery -->
-<script src="<?php echo get_template_directory_uri() . '/dist/scripts.min.js' ?>"></script>
 <?php wp_footer(); ?>
 </body>
 </html>

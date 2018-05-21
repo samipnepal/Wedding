@@ -33,6 +33,11 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/superfish.css' ?>">
     <!-- Magnific Popup -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/magnific-popup.css' ?>">
+    <style>
+        :root {
+            --weddingColor: <?php echo get_option('color'); ?>;
+        }
+    </style>
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/style.css' ?>">
 
@@ -49,7 +54,7 @@
 
         <div class="fh5co-hero" data-section="home">
             <div class="fh5co-overlay"></div>
-            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(<?php echo get_template_directory_uri() . '/images/cover_bg_1.jpg' ?>);">
+            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(<?php echo get_option('coverImage'); ?>);">
                 <div class="display-t">
                     <div class="display-tc">
                         <div class="container">
@@ -70,7 +75,7 @@
             <div class="container">
                 <div class="nav-header">
                     <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-                    <h1 id="fh5co-logo"><a href="#">Wedding</a></h1>
+                    <h1 id="fh5co-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Wedding</a></h1>
                     <!-- START #fh5co-menu-wrap -->
                     <nav id="fh5co-menu-wrap" role="navigation">
                        <?php

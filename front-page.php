@@ -20,12 +20,12 @@ get_header(); ?>
             <div class="row row-bottom-padded-md animate-box">
                 <div class="col-md-6 col-md-offset-3 text-center">
                     <div class="col-md-5 col-sm-5 col-xs-5 nopadding">
-                        <img src="<?php echo get_template_directory_uri() . '/images/groom.jpg' ?>" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                        <img src="<?php echo get_option('groomImage'); ?>" class="img-responsive">
                         <h3><?php echo get_option('groom_name'); ?></h3>
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-2 nopadding"><h2 class="amp-center"><i class="icon-heart"></i></h2></div>
                     <div class="col-md-5 col-sm-5 col-xs-5 nopadding">
-                        <img src="<?php echo get_template_directory_uri() . '/images/bride.jpg' ?>" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                        <img src="<?php echo get_option('groomImage'); ?>" class="img-responsive">
                         <h3><?php echo get_option('bride_name'); ?></h3>
                     </div>
                 </div>
@@ -34,7 +34,7 @@ get_header(); ?>
                 <div class="col-md-8 col-md-offset-2">
                     <div class="col-md-12 text-center heading-section">
                         <h2>Are Getting Married</h2>
-                        <p><strong>on <?php echo get_option('wedding_date'); ?> &mdash; Boracay, Philippines</strong></p>
+                        <p><strong>on <?php echo get_option('wedding_date'); ?> &mdash; <?php echo get_option('location'); ?></strong></p>
                     </div>
                 </div>
             </div>
@@ -43,6 +43,7 @@ get_header(); ?>
     <div id="fh5co-countdown">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center animate-box">
+                <input type="date" name="weddingDate" id="weddingDate" value="<?php echo get_option('wedding_date'); ?>" hidden />
                 <p class="countdown">
                     <span id="days"></span>
                     <span id="hours"></span>
@@ -53,7 +54,7 @@ get_header(); ?>
         </div>
     </div>
 
-    <div id="fh5co-started" style="background-image:url(<?php echo get_template_directory_uri() . '/images/cover_bg_2.jp' ?>);" data-stellar-background-ratio="0.5">
+    <div id="fh5co-started" style="background-image:url(<?php echo get_option('coverImage'); ?>);" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row animate-box">
@@ -86,6 +87,47 @@ get_header(); ?>
         </div>
     </div>
 
+    <script>
 
+        var weddingDate = document.getElementById("weddingDate").value;
+
+        // Set the date we're counting down to
+        var countDownDate = new Date(weddingDate + " 00:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+
+            // Get todays date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now an the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in an element with id="demo"
+            // document.getElementById("demo").innerHTML = days + "Days " + hours + "Hours "
+            // + minutes + "Minutes " + seconds + "Seconds ";
+
+            // Display the result in an element with id="demo"
+
+            document.getElementById("days").innerHTML = days +" <small>days</small>";
+            document.getElementById("hours").innerHTML = hours + " <small>hours</small> ";
+            document.getElementById("minutes").innerHTML = minutes + " <small>minutes</small> ";
+            document.getElementById("seconds").innerHTML = seconds + " <small>seconds</small> ";
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "The Wedding Ceremony is Over";
+            }
+        }, 1000);
+
+    </script>
 <?php get_footer();
 

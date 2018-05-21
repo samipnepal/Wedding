@@ -1,13 +1,13 @@
 
 TITLE: 
-Nuptial - 100% Fully Responsive Free HTML5 Bootstrap Template
+Wedding - 100% Fully Responsive Wordpress Theme
 
 AUTHOR:
-DESIGNED & DEVELOPED by FREEHTML5.co
+Yadab Nepal
 
-Website: http://freehtml5.co/
-Twitter: http://twitter.com/fh5co
-Facebook: http://facebook.com/fh5co
+Website: http://yadabn.com.np/
+Twitter: http://twitter.com/samipnepal
+Facebook: http://facebook.com/samipnepal
 
 
 CREDITS:

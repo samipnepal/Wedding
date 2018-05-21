@@ -32,16 +32,36 @@ get_header(); ?>
                 if ( have_posts() ) :
 
                     /* Start the Loop */
-                    while ( have_posts() ) : the_post();
+                    while ( have_posts() ) : the_post(); ?>
 
-                        /*
-                         * Include the Post-Format-specific template for the content.
-                         * If you want to override this in a child theme, then include a file
-                         * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                         */
-                        get_template_part( 'template-parts/post/content', get_post_format() );
+                        <ul>
+                            <?php $the_query = $query = new WP_Query( array( 'category_name' => 'Blog' ) ); ?>
 
-                    endwhile;
+                            <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="fh5co-blog animate-box">
+                                        <?php  if ( has_post_thumbnail() ) { ?>
+                                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive')); ?></a>
+                                        <?php } ?>
+
+                                        <div class="blog-text">
+                                            <div class="prod-title">
+                                                <h3><a href="#"><?php the_title(); ?></a></h3>
+                                                <span class="by"><?php the_author(); ?></span>
+                                                <span class="posted_date"><?php the_date(); ?></span>
+                                                <span class="comment"><a href=""><?php the_comment(); ?><i class="icon-bubble2"></i></a></span>
+                                                <p><?php the_excerpt(__('(More…)')); ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php
+                            endwhile;
+                            wp_reset_postdata();
+                            ?>
+                        </ul>
+
+                    <?php endwhile;
 
                 else :
 

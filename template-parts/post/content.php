@@ -12,36 +12,34 @@
 
 ?>
 
-<div class="col-lg-4 col-md-4 col-sm-6">
-    <div class="fh5co-blog animate-box">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-        <ul>
+    <header class="entry-header">
+        <?php
+            the_title( '<h1 class="entry-title">', '</h1>' );
+            the_date('','<span>','</span>');
 
-            <?php $the_query = new WP_Query( 'posts_per_page=5' ); ?>
+        ?>
+        <?php
+        $category = get_the_category();
+        echo $category[0]->cat_name;
+        ?>
+        <h1><?php $category[0]?></h1>
+    </header>
 
+    <body>
 
-            <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+        <?php
+            the_content( '', '')
+        ?>
+    </body>
 
-            <?php  if ( has_post_thumbnail() ) { ?>
-                    <a href="#"><img class="img-responsive" src="<?php the_post_thumbnail(); ?>" alt=""></a>
-            <?php } ?>
+    <?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
+        <div class="post-thumbnail">
+            <a href="<?php the_permalink(); ?>">
+                <?php the_post_thumbnail( 'wedding-featured-image' ); ?>
+            </a>
+        </div><!-- .post-thumbnail -->
+    <?php endif; ?>
 
-                <div class="blog-text">
-                    <div class="prod-title">
-                        <h3><a href="#"><?php the_title(); ?></a></h3>
-                        <span class="by">by Admin</span>
-                        <span class="posted_date">Apr. 15th</span>
-                        <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-                        <p><?php the_content();  ?></p>
-                        <p><?php the_excerpt(__('(More…)')); ?></p>
-                    </div>
-                </div>
-
-            <?php
-            endwhile;
-            wp_reset_postdata();
-            ?>
-        </ul>
-
-    </div>
-</div>
+</article><!-- #post-## -->
