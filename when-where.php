@@ -40,6 +40,24 @@ get_header(); ?>
         </div>
     </div>
 
+    <script>
+        function initMap() {
+            var latitude = document.getElementById("mapLatitude").value;
+            var longitude = document.getElementById("mapLongitude").value;
+            var uluru = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARXjqUvxb9M5JmbqpwvtV79Lkb9g2JmRk &callback=initMap">
+    </script>
 
 <?php get_footer();
 

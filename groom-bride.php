@@ -3,7 +3,6 @@
 
 get_header(); ?>
 
-
     <div id="fh5co-groom-bride">
         <div class="container">
             <div class="row">
@@ -21,8 +20,8 @@ get_header(); ?>
                             <h3><?php echo get_option('groomName'); ?></h3>
                             <p><?php echo get_option('aboutGroom'); ?></p>
                             <p class="fh5co-social-icons">
-                                <a href="#"><i class="icon-facebook2"></i></a>
-                                <a href="#"><i class="icon-instagram"></i></a>
+                                <a href="<?php echo get_option('groomFacebookLink'); ?>"><i class="icon-facebook2"></i></a>
+                                <a href="<?php echo get_option('groomInstaLink'); ?>"><i class="icon-instagram"></i></a>
                             </p>
                         </div>
                     </div>
@@ -38,8 +37,8 @@ get_header(); ?>
                             <h3><?php echo get_option('brideName'); ?></h3>
                             <p><?php echo get_option('aboutBride'); ?></p>
                             <p class="fh5co-social-icons">
-                                <a href="#"><i class="icon-facebook2"></i></a>
-                                <a href="#"><i class="icon-instagram"></i></a>
+                                <a href="<?php echo get_option('brideFacebookLink'); ?>"><i class="icon-facebook2"></i></a>
+                                <a href="<?php echo get_option('brideInstaLink'); ?>"><i class="icon-instagram"></i></a>
                             </p>
                         </div>
                     </div>

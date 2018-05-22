@@ -35,7 +35,7 @@ get_header(); ?>
                     while ( have_posts() ) : the_post(); ?>
 
                         <ul>
-                            <?php $the_query = $query = new WP_Query( array( 'category_name' => 'Blog' ) ); ?>
+                            <?php $the_query = $query = new WP_Query( array( 'posts_per_page' => -1 ) ); ?>
 
                             <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
                                 <div class="col-lg-4 col-md-4 col-sm-6">

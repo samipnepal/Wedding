@@ -89,6 +89,33 @@ function party_location_input()
     <input type="text" name="partyLocation" id="partyLocation" value="<?php echo get_option('partyLocation'); ?>" />
     <?php
 }
+
+function groom_facebook_link()
+{
+    ?>
+    <input type="text" name="groomFacebookLink" id="groomFacebookLink" value="<?php echo get_option('groomFacebookLink'); ?>" />
+    <?php
+}
+
+function groom_insta_link()
+{
+    ?>
+    <input type="text" name="groomInstaLink" id="groomInstaLink" value="<?php echo get_option('groomInstaLink'); ?>" />
+    <?php
+}
+
+function bride_facebook_link()
+{
+    ?>
+    <input type="text" name="brideFacebookLink" id="brideFacebookLink" value="<?php echo get_option('brideFacebookLink'); ?>" />
+    <?php
+}
+function bride_insta_link()
+{
+    ?>
+    <input type="text" name="brideInstaLink" id="brideInstaLink" value="<?php echo get_option('brideInstaLink'); ?>" />
+    <?php
+}
 function color_input()
 {
     ?>
@@ -582,7 +609,16 @@ function display_theme_panel_fields()
     add_settings_field("partyVenue", "Party Venue Image", "party_venue_upload", "theme-options", "section");
     add_settings_field("partyDate", "Party Date", "party_date_input", "theme-options", "section");
     add_settings_field("partyLocation", "Party Location", "party_location_input", "theme-options", "section");
+    add_settings_field("groomFacebookLink", "Groom Facebook Link", "groom_facebook_link", "theme-options", "section");
+    add_settings_field("groomInstaLink", "Groom Instagram Link", "groom_insta_link", "theme-options", "section");
+    add_settings_field("brideFacebookLink", "Groom Facebook Link", "bride_facebook_link", "theme-options", "section");
+    add_settings_field("brideInstaLink", "Groom Instagram Link", "bride_insta_link", "theme-options", "section");
 
+
+    register_setting("section", "groomFacebookLink");
+    register_setting("section", "groomInstaLink");
+    register_setting("section", "brideFacebookLink");
+    register_setting("section", "brideInstaLink");
     register_setting("section", "weddingVenue");
     register_setting("section", "partyVenue");
     register_setting("section", "groomImage");
