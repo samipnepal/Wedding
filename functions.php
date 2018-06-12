@@ -572,6 +572,18 @@ function bride_men4_upload()
     <?php
 }
 
+function my_theme_send_email() {
+
+    if ( isset( $_POST['email'] ) && $_POST['name'] ) {
+        $attainingEmail = $_POST['email'];
+        $attainingName = $_POST['name'];
+        wp_mail('samipnepal@gmail.com', "Wedding Attendees",'Email: '.$attainingEmail.'\n Name: '.$attainingName, 'Who is attending');
+        return "Your Email: ".$attainingEmail." and Name: ".$attainingName." has been registered";
+    } // end if
+    return 'Not able to register your email. Please try again';
+
+} // end my_theme_send_email
+
 
 function display_theme_panel_fields()
 {

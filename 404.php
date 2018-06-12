@@ -12,23 +12,53 @@
 
 get_header(); ?>
 
-<div class="wrap">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'twentyseventeen' ); ?></h1>
-				</header><!-- .page-header -->
-				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentyseventeen' ); ?></p>
+    <div id="fh5co-countdown">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center animate-box">
+                <p class="countdown" id="countdown">
+                <h1 class="page-title">Thank you for your early information.</h1>
+                <h2><?php echo my_theme_send_email(); ?></h2>
+                <h3>Will see you on our wedding.</h3>
+                <h3>Thank You!!</h3>
+                </p>
+            </div>
+        </div>
+    </div>
 
-					<?php get_search_form(); ?>
+    <div id="fh5co-started" style="background-image:url(<?php echo get_option('coverImage'); ?>);" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2 text-center heading-section">
+                    <h2>Register Again? </h2>
+                    <p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-		</main><!-- #main -->
-	</div><!-- #primary -->
-</div><!-- .wrap -->
+                </div>
+            </div>
+            <div class="row animate-box">
+                <div class="col-md-10 col-md-offset-1">
+                    <form class="form-inline" action="" method="post">
+                        <div class="col-md-4 col-sm-4">
+                            <div class="form-group">
+                                <label for="name" class="sr-only">Name</label>
+                                <input type="name" class="form-control" id="name" placeholder="Name" required name="name">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="form-group">
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email" required name="email">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <input type="submit" class="btn btn-primary btn-block" value="I am Attending">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 <?php get_footer();

@@ -44,7 +44,7 @@ get_header(); ?>
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center animate-box">
                 <input type="date" name="weddingDate" id="weddingDate" value="<?php echo get_option('wedding_date'); ?>" hidden />
-                <p class="countdown">
+                <p class="countdown" id="countdown">
                     <span id="days"></span>
                     <span id="hours"></span>
                     <span id="minutes"></span>
@@ -59,33 +59,36 @@ get_header(); ?>
         <div class="container">
             <div class="row animate-box">
                 <div class="col-md-8 col-md-offset-2 text-center heading-section">
-                    <h2>Are You Attending?</h2>
-                    <p>Please Fill-up the form to notify you that you're attending. Thanks.
+                    <h2>Are You Attending? </h2>
+                    <p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
+
                 </div>
             </div>
             <div class="row animate-box">
                 <div class="col-md-10 col-md-offset-1">
-                    <form class="form-inline">
+                    <form class="form-inline" action="" method="post">
                         <div class="col-md-4 col-sm-4">
                             <div class="form-group">
                                 <label for="name" class="sr-only">Name</label>
-                                <input type="name" class="form-control" id="name" placeholder="Name">
+                                <input type="name" class="form-control" id="name" placeholder="Name" required name="name">
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4">
                             <div class="form-group">
                                 <label for="email" class="sr-only">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                <input type="email" class="form-control" id="email" placeholder="Email" required name="email">
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4">
-                            <button type="submit" class="btn btn-primary btn-block">I am Attending</button>
+                            <input type="submit" class="btn btn-primary btn-block" value="I am Attending">
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+<?php /*echo get_template_directory_uri() . '/attendance.php' */?>
 
     <script>
 
@@ -124,7 +127,7 @@ get_header(); ?>
             // If the count down is finished, write some text
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("demo").innerHTML = "The Wedding Ceremony is Over";
+                document.getElementById("countdown").innerHTML = "The Wedding Ceremony is Over";
             }
         }, 1000);
 
