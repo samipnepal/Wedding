@@ -623,8 +623,8 @@ function display_theme_panel_fields()
     add_settings_field("partyLocation", "Party Location", "party_location_input", "theme-options", "section");
     add_settings_field("groomFacebookLink", "Groom Facebook Link", "groom_facebook_link", "theme-options", "section");
     add_settings_field("groomInstaLink", "Groom Instagram Link", "groom_insta_link", "theme-options", "section");
-    add_settings_field("brideFacebookLink", "Groom Facebook Link", "bride_facebook_link", "theme-options", "section");
-    add_settings_field("brideInstaLink", "Groom Instagram Link", "bride_insta_link", "theme-options", "section");
+    add_settings_field("brideFacebookLink", "Bride Facebook Link", "bride_facebook_link", "theme-options", "section");
+    add_settings_field("brideInstaLink", "Bride Instagram Link", "bride_insta_link", "theme-options", "section");
 
 
     register_setting("section", "groomFacebookLink");

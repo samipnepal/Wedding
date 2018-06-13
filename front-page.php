@@ -25,7 +25,7 @@ get_header(); ?>
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-2 nopadding"><h2 class="amp-center"><i class="icon-heart"></i></h2></div>
                     <div class="col-md-5 col-sm-5 col-xs-5 nopadding">
-                        <img src="<?php echo get_option('groomImage'); ?>" class="img-responsive">
+                        <img src="<?php echo get_option('brideImage'); ?>" class="img-responsive">
                         <h3><?php echo get_option('bride_name'); ?></h3>
                     </div>
                 </div>
